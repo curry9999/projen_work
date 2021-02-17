@@ -23,7 +23,7 @@ export class MyStack extends Stack {
           cidrMask: 28,
           name: 'rds',
           subnetType: ec2.SubnetType.ISOLATED,
-        }
+        },
       ]
     });
   }
