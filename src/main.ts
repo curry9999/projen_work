@@ -1,30 +1,30 @@
+import { Vpc, SubnetType } from '@aws-cdk/aws-ec2';
 import { App, Construct, Stack, StackProps } from '@aws-cdk/core';
-import ec2 = require('@aws-cdk/aws-ec2');
 
 export class MyStack extends Stack {
   constructor(scope: Construct, id: string, props: StackProps = {}) {
     super(scope, id, props);
 
     // VPC
-    new ec2.Vpc(this, 'VPC', {
-      cidr: "10.0.0.0/16",
+    new Vpc(this, 'VPC', {
+      cidr: '10.0.0.0/16',
       subnetConfiguration: [
         {
           cidrMask: 24,
           name: 'ingress',
-          subnetType: ec2.SubnetType.PUBLIC,
+          subnetType: SubnetType.PUBLIC,
         },
         {
           cidrMask: 24,
           name: 'application',
-          subnetType: ec2.SubnetType.PRIVATE,
+          subnetType: SubnetType.PRIVATE,
         },
         {
           cidrMask: 28,
           name: 'rds',
-          subnetType: ec2.SubnetType.ISOLATED,
-        }
-      ]
+          subnetType: SubnetType.ISOLATED,
+        },
+      ],
     });
   }
 }
