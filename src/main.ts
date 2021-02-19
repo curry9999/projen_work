@@ -1,3 +1,4 @@
+import { BackupPlan, BackupPlanRule, BackupResource } from '@aws-cdk/aws-backup';
 import { AttributeType, Table } from '@aws-cdk/aws-dynamodb';
 import { App, Construct, Stack, StackProps } from '@aws-cdk/core';
 
@@ -5,11 +6,24 @@ export class DynamoDBStack extends Stack {
   constructor(scope: Construct, id: string, props: StackProps = {}) {
     super(scope, id, props);
 
-    new Table(this, 'PostTable', {
+    // Create DynamoDB Table
+    const table = new Table(this, 'DynamodbTable', {
+      tableName: 'picturetable',
       partitionKey: {
         name: 'no',
         type: AttributeType.NUMBER,
       },
+    });
+
+    // Create AWS Backup
+    const backupplan = new BackupPlan(this, 'BackupPlan', {
+      backupPlanName: 'backup-plan',
+    });
+    backupplan.addRule(BackupPlanRule.daily());
+    backupplan.addSelection('Selection', {
+      resources: [
+        BackupResource.fromDynamoDbTable(table), // A DynamoDB table
+      ],
     });
   }
 }
