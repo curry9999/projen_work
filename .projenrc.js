@@ -6,7 +6,11 @@ const project = new AwsCdkTypeScriptApp({
   jsiiFqn: 'projen.AwsCdkTypeScriptApp',
   name: 'projen_work',
   cdkDependencies: [
-    '@aws-cdk/aws-ec2',
+    '@aws-cdk/aws-dynamodb',
+    '@aws-cdk/aws-backup',
+    '@aws-cdk/aws-events',
+    '@aws-cdk/aws-lambda',
+    '@aws-cdk/aws-iam',
   ],
 
   /* AwsCdkTypeScriptAppOptions */
