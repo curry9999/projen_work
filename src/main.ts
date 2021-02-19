@@ -1,30 +1,15 @@
-import { Vpc, SubnetType } from '@aws-cdk/aws-ec2';
+import { AttributeType, Table } from '@aws-cdk/aws-dynamodb';
 import { App, Construct, Stack, StackProps } from '@aws-cdk/core';
 
-export class MyStack extends Stack {
+export class DynamoDBStack extends Stack {
   constructor(scope: Construct, id: string, props: StackProps = {}) {
     super(scope, id, props);
 
-    // VPC
-    new Vpc(this, 'VPC', {
-      cidr: '10.0.0.0/16',
-      subnetConfiguration: [
-        {
-          cidrMask: 24,
-          name: 'ingress',
-          subnetType: SubnetType.PUBLIC,
-        },
-        {
-          cidrMask: 24,
-          name: 'application',
-          subnetType: SubnetType.PRIVATE,
-        },
-        {
-          cidrMask: 28,
-          name: 'rds',
-          subnetType: SubnetType.ISOLATED,
-        },
-      ],
+    new Table(this, 'PostTable', {
+      partitionKey: {
+        name: 'no',
+        type: AttributeType.NUMBER,
+      },
     });
   }
 }
@@ -37,7 +22,6 @@ const devEnv = {
 
 const app = new App();
 
-new MyStack(app, 'my-stack-dev', { env: devEnv });
-// new MyStack(app, 'my-stack-prod', { env: prodEnv });
+new DynamoDBStack(app, 'dynamodb-dev', { env: devEnv });
 
 app.synth();
