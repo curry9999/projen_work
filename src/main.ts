@@ -1,7 +1,7 @@
 import { BackupPlan, BackupPlanRule, BackupResource } from '@aws-cdk/aws-backup';
 import { AttributeType, Table } from '@aws-cdk/aws-dynamodb';
-import { Code, Function, Runtime } from '@aws-cdk/aws-lambda';
 import { Role, ServicePrincipal, ManagedPolicy } from '@aws-cdk/aws-iam';
+import { Code, Function, Runtime } from '@aws-cdk/aws-lambda';
 import { App, Construct, Stack, StackProps } from '@aws-cdk/core';
 
 // DynamoDB Stack
@@ -16,7 +16,7 @@ export class DynamoDBStack extends Stack {
         ManagedPolicy.fromAwsManagedPolicyName('service-role/AWSLambdaBasicExecutionRole'),
         ManagedPolicy.fromAwsManagedPolicyName('AmazonDynamoDBFullAccess'),
       ],
-    }); 
+    });
 
     // Create DynamoDB Table
     const table = new Table(this, 'DynamodbTable', {
@@ -27,7 +27,7 @@ export class DynamoDBStack extends Stack {
       sortKey: {
         name: 'col',
         type: AttributeType.STRING,
-      }
+      },
     });
 
     // Create AWS Backup
@@ -40,7 +40,7 @@ export class DynamoDBStack extends Stack {
     });
 
     // Lambda
-    new Function(this, 'HelloWorld', {
+    new Function(this, 'LabmdaFunction', {
       handler: 'index.handler',
       code: Code.fromAsset('functions'),
       runtime: Runtime.NODEJS_14_X,

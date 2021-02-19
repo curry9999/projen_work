@@ -3,16 +3,16 @@
 exports[`Snapshot 1`] = `
 Object {
   "Parameters": Object {
-    "AssetParameters016b25817406ac6956e9ff8857a0e12ddf72f2806f239ad2c6db9ff1c0f9b2dcArtifactHash4AD90612": Object {
-      "Description": "Artifact hash for asset \\"016b25817406ac6956e9ff8857a0e12ddf72f2806f239ad2c6db9ff1c0f9b2dc\\"",
+    "AssetParameters1163038657f6c2adc82dd258faec25e87bb54088e6ac70142afdde8c7a91792cArtifactHash13C8AF43": Object {
+      "Description": "Artifact hash for asset \\"1163038657f6c2adc82dd258faec25e87bb54088e6ac70142afdde8c7a91792c\\"",
       "Type": "String",
     },
-    "AssetParameters016b25817406ac6956e9ff8857a0e12ddf72f2806f239ad2c6db9ff1c0f9b2dcS3BucketDBC4B51D": Object {
-      "Description": "S3 bucket for asset \\"016b25817406ac6956e9ff8857a0e12ddf72f2806f239ad2c6db9ff1c0f9b2dc\\"",
+    "AssetParameters1163038657f6c2adc82dd258faec25e87bb54088e6ac70142afdde8c7a91792cS3BucketB515DA77": Object {
+      "Description": "S3 bucket for asset \\"1163038657f6c2adc82dd258faec25e87bb54088e6ac70142afdde8c7a91792c\\"",
       "Type": "String",
     },
-    "AssetParameters016b25817406ac6956e9ff8857a0e12ddf72f2806f239ad2c6db9ff1c0f9b2dcS3VersionKeyDA02F962": Object {
-      "Description": "S3 key for asset version \\"016b25817406ac6956e9ff8857a0e12ddf72f2806f239ad2c6db9ff1c0f9b2dc\\"",
+    "AssetParameters1163038657f6c2adc82dd258faec25e87bb54088e6ac70142afdde8c7a91792cS3VersionKeyD8EF2AAC": Object {
+      "Description": "S3 key for asset version \\"1163038657f6c2adc82dd258faec25e87bb54088e6ac70142afdde8c7a91792c\\"",
       "Type": "String",
     },
   },
@@ -20,7 +20,7 @@ Object {
     "BackupPlanA8F64793": Object {
       "Properties": Object {
         "BackupPlan": Object {
-          "BackupPlanName": "backup-plan",
+          "BackupPlanName": "BackupPlan",
           "BackupPlanRule": Array [
             Object {
               "Lifecycle": Object {
@@ -113,7 +113,11 @@ Object {
         "AttributeDefinitions": Array [
           Object {
             "AttributeName": "no",
-            "AttributeType": "N",
+            "AttributeType": "S",
+          },
+          Object {
+            "AttributeName": "col",
+            "AttributeType": "S",
           },
         ],
         "KeySchema": Array [
@@ -121,71 +125,20 @@ Object {
             "AttributeName": "no",
             "KeyType": "HASH",
           },
+          Object {
+            "AttributeName": "col",
+            "KeyType": "RANGE",
+          },
         ],
         "ProvisionedThroughput": Object {
           "ReadCapacityUnits": 5,
           "WriteCapacityUnits": 5,
         },
-        "TableName": "backendtable",
       },
       "Type": "AWS::DynamoDB::Table",
       "UpdateReplacePolicy": "Retain",
     },
-    "HelloWorld7964D1E8": Object {
-      "DependsOn": Array [
-        "HelloWorldServiceRoleF3F7D8B0",
-      ],
-      "Properties": Object {
-        "Code": Object {
-          "S3Bucket": Object {
-            "Ref": "AssetParameters016b25817406ac6956e9ff8857a0e12ddf72f2806f239ad2c6db9ff1c0f9b2dcS3BucketDBC4B51D",
-          },
-          "S3Key": Object {
-            "Fn::Join": Array [
-              "",
-              Array [
-                Object {
-                  "Fn::Select": Array [
-                    0,
-                    Object {
-                      "Fn::Split": Array [
-                        "||",
-                        Object {
-                          "Ref": "AssetParameters016b25817406ac6956e9ff8857a0e12ddf72f2806f239ad2c6db9ff1c0f9b2dcS3VersionKeyDA02F962",
-                        },
-                      ],
-                    },
-                  ],
-                },
-                Object {
-                  "Fn::Select": Array [
-                    1,
-                    Object {
-                      "Fn::Split": Array [
-                        "||",
-                        Object {
-                          "Ref": "AssetParameters016b25817406ac6956e9ff8857a0e12ddf72f2806f239ad2c6db9ff1c0f9b2dcS3VersionKeyDA02F962",
-                        },
-                      ],
-                    },
-                  ],
-                },
-              ],
-            ],
-          },
-        },
-        "Handler": "index.handler",
-        "Role": Object {
-          "Fn::GetAtt": Array [
-            "HelloWorldServiceRoleF3F7D8B0",
-            "Arn",
-          ],
-        },
-        "Runtime": "nodejs14.x",
-      },
-      "Type": "AWS::Lambda::Function",
-    },
-    "HelloWorldServiceRoleF3F7D8B0": Object {
+    "IamRoleLambdaD73998E6": Object {
       "Properties": Object {
         "AssumeRolePolicyDocument": Object {
           "Statement": Array [
@@ -212,9 +165,82 @@ Object {
               ],
             ],
           },
+          Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                "arn:",
+                Object {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/AmazonDynamoDBFullAccess",
+              ],
+            ],
+          },
         ],
       },
       "Type": "AWS::IAM::Role",
+    },
+    "LabmdaFunctionE7C9FF4A": Object {
+      "DependsOn": Array [
+        "IamRoleLambdaD73998E6",
+      ],
+      "Properties": Object {
+        "Code": Object {
+          "S3Bucket": Object {
+            "Ref": "AssetParameters1163038657f6c2adc82dd258faec25e87bb54088e6ac70142afdde8c7a91792cS3BucketB515DA77",
+          },
+          "S3Key": Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                Object {
+                  "Fn::Select": Array [
+                    0,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameters1163038657f6c2adc82dd258faec25e87bb54088e6ac70142afdde8c7a91792cS3VersionKeyD8EF2AAC",
+                        },
+                      ],
+                    },
+                  ],
+                },
+                Object {
+                  "Fn::Select": Array [
+                    1,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameters1163038657f6c2adc82dd258faec25e87bb54088e6ac70142afdde8c7a91792cS3VersionKeyD8EF2AAC",
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            ],
+          },
+        },
+        "Environment": Object {
+          "Variables": Object {
+            "tablename": Object {
+              "Ref": "DynamodbTable043A9C36",
+            },
+          },
+        },
+        "Handler": "index.handler",
+        "Role": Object {
+          "Fn::GetAtt": Array [
+            "IamRoleLambdaD73998E6",
+            "Arn",
+          ],
+        },
+        "Runtime": "nodejs14.x",
+      },
+      "Type": "AWS::Lambda::Function",
     },
   },
 }
