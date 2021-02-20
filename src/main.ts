@@ -9,15 +9,6 @@ export class DynamoDBStack extends Stack {
   constructor(scope: Construct, id: string, props: StackProps = {}) {
     super(scope, id, props);
 
-    // Lambda Service Role
-    const servicerole = new Role(this, 'IamRoleLambda', {
-      assumedBy: new ServicePrincipal('lambda.amazonaws.com'),
-      managedPolicies: [
-        ManagedPolicy.fromAwsManagedPolicyName('service-role/AWSLambdaBasicExecutionRole'),
-        ManagedPolicy.fromAwsManagedPolicyName('AmazonDynamoDBFullAccess'),
-      ],
-    });
-
     // Create DynamoDB Table
     const table = new Table(this, 'DynamodbTable', {
       partitionKey: {
@@ -30,7 +21,7 @@ export class DynamoDBStack extends Stack {
       },
     });
 
-    // Create AWS Backup
+    // Setup AWS Backup
     const backupplan = new BackupPlan(this, 'BackupPlan', {});
     backupplan.addRule(BackupPlanRule.daily());
     backupplan.addSelection('Selection', {
@@ -39,7 +30,16 @@ export class DynamoDBStack extends Stack {
       ],
     });
 
-    // Lambda
+    // Lambda Service Role
+    const servicerole = new Role(this, 'IamRoleLambda', {
+      assumedBy: new ServicePrincipal('lambda.amazonaws.com'),
+      managedPolicies: [
+        ManagedPolicy.fromAwsManagedPolicyName('service-role/AWSLambdaBasicExecutionRole'),
+        ManagedPolicy.fromAwsManagedPolicyName('AmazonDynamoDBFullAccess'),
+      ],
+    });
+
+    // Lambda Deploy
     new Function(this, 'LabmdaFunction', {
       handler: 'index.handler',
       code: Code.fromAsset('functions'),
