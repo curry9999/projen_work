@@ -21,7 +21,7 @@ export class DynamoDBStack extends Stack {
       },
     });
 
-    // Create AWS Backup
+    // Setup AWS Backup
     const backupplan = new BackupPlan(this, 'BackupPlan', {});
     backupplan.addRule(BackupPlanRule.daily());
     backupplan.addSelection('Selection', {
@@ -39,7 +39,7 @@ export class DynamoDBStack extends Stack {
       ],
     });
 
-    // Lambda
+    // Lambda Deploy
     new Function(this, 'LabmdaFunction', {
       handler: 'index.handler',
       code: Code.fromAsset('functions'),
