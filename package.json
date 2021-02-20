@@ -33,7 +33,7 @@
     "jest": "^26.6.3",
     "jest-junit": "^12",
     "json-schema": "^0.3.0",
-    "projen": "^0.16.5",
+    "projen": "^0.16.9",
     "standard-version": "^9.0.0",
     "ts-jest": "^26.5.1",
     "ts-node": "^9.1.1",
@@ -50,7 +50,7 @@
   },
   "bundledDependencies": [],
   "license": "Apache-2.0",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "jest": {
     "testMatch": [
       "**/__tests__/**/*.ts?(x)",
