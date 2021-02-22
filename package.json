@@ -37,7 +37,7 @@
     "standard-version": "^9.0.0",
     "ts-jest": "^26.5.1",
     "ts-node": "^9.1.1",
-    "typescript": "^3.9.5"
+    "typescript": "^3.9.9"
   },
   "dependencies": {
     "@aws-cdk/assert": "^1.90.1",
