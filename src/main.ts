@@ -9,6 +9,8 @@ export class DynamoDBStack extends Stack {
   constructor(scope: Construct, id: string, props: StackProps = {}) {
     super(scope, id, props);
 
+    const backupFlg = this.node.tryGetContext('backup');
+
     // Create DynamoDB Table
     const table = new Table(this, 'DynamodbTable', {
       partitionKey: {
@@ -22,13 +24,15 @@ export class DynamoDBStack extends Stack {
     });
 
     // Setup AWS Backup
-    const backupplan = new BackupPlan(this, 'BackupPlan', {});
-    backupplan.addRule(BackupPlanRule.daily());
-    backupplan.addSelection('Selection', {
-      resources: [
-        BackupResource.fromDynamoDbTable(table), // A DynamoDB table
-      ],
-    });
+    if ( backupFlg == '1' ) {
+      const backupplan = new BackupPlan(this, 'BackupPlan', {});
+      backupplan.addRule(BackupPlanRule.daily());
+      backupplan.addSelection('Selection', {
+        resources: [
+          BackupResource.fromDynamoDbTable(table), // A DynamoDB table
+        ],
+      });
+    }
 
     // Lambda Service Role
     const servicerole = new Role(this, 'IamRoleLambda', {
@@ -60,6 +64,8 @@ const devEnv = {
 
 const app = new App();
 
-new DynamoDBStack(app, 'dynamodb-dev', { env: devEnv });
+const envName = app.node.tryGetContext('env');
+
+new DynamoDBStack(app, 'dynamodb-' + envName, { env: devEnv });
 
 app.synth();

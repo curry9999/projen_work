@@ -19,7 +19,7 @@
     },
     {
       "name": "aws-cdk",
-      "version": "^0.0.0",
+      "version": "^1.91.0",
       "type": "build"
     },
     {
@@ -75,37 +75,37 @@
     },
     {
       "name": "@aws-cdk/assert",
-      "version": "^0.0.0",
+      "version": "^1.91.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-backup",
-      "version": "^0.0.0",
+      "version": "^1.91.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-dynamodb",
-      "version": "^0.0.0",
+      "version": "^1.91.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-events",
-      "version": "^0.0.0",
+      "version": "^1.91.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-iam",
-      "version": "^0.0.0",
+      "version": "^1.91.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-lambda",
-      "version": "^0.0.0",
+      "version": "^1.91.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/core",
-      "version": "^0.0.0",
+      "version": "^1.91.0",
       "type": "runtime"
     }
   ],
