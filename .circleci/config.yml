@@ -1,6 +1,39 @@
 version: 2.1
 orbs:
   node: circleci/node@3.0.0
+jobs:
+  setup:
+    executor: my-executor
+    steps:
+      - checkout
+      - restore
+      - run:
+          name: install
+          command: |
+            sudo pip install pipenv
+            pipenv install
+            npm install
+      - save
+
+  deploy:
+    executor: my-executor
+    parameters:
+      env:
+        type: enum
+        enum: ["prod", "dev"]
+    steps:
+      - checkout
+      - restore
+      - run:
+          name: deploy
+          command: |
+            source .venv/bin/activate
+            python --version
+            aws --version
+            npm --version
+            node --version
+            npx cdk --version
+            npm run build
 workflows:
   node-tests:
     jobs:
