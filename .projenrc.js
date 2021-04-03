@@ -11,7 +11,6 @@ const project = new AwsCdkTypeScriptApp({
     '@aws-cdk/aws-events',
     '@aws-cdk/aws-lambda',
     '@aws-cdk/aws-iam',
-    'netmask',
   ],
   context: {
     env: 'prod',
