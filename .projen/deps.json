@@ -94,6 +94,11 @@
       "type": "runtime"
     },
     {
+      "name": "@aws-cdk/aws-efs",
+      "version": "^1.96.0",
+      "type": "runtime"
+    },
+    {
       "name": "@aws-cdk/aws-events",
       "version": "^1.96.0",
       "type": "runtime"
@@ -105,6 +110,11 @@
     },
     {
       "name": "@aws-cdk/aws-lambda",
+      "version": "^1.96.0",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-cdk/aws-rds",
       "version": "^1.96.0",
       "type": "runtime"
     },

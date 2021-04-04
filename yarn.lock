@@ -145,7 +145,7 @@
     "@aws-cdk/core" "1.96.0"
     constructs "^3.3.69"
 
-"@aws-cdk/aws-efs@1.96.0":
+"@aws-cdk/aws-efs@1.96.0", "@aws-cdk/aws-efs@^1.96.0":
   version "1.96.0"
   resolved "https://registry.npmjs.org/@aws-cdk/aws-efs/-/aws-efs-1.96.0.tgz"
   integrity sha512-oxAzIitrA82J0jFPAz/qvOL+d6YpxwArXJFDrNAPHZ64UgFMMv6lPTgaOMhe+MNN7S6DJMJ6EPmyRJnRg77Xgw==
@@ -221,7 +221,7 @@
     "@aws-cdk/core" "1.96.0"
     constructs "^3.3.69"
 
-"@aws-cdk/aws-rds@1.96.0":
+"@aws-cdk/aws-rds@1.96.0", "@aws-cdk/aws-rds@^1.96.0":
   version "1.96.0"
   resolved "https://registry.npmjs.org/@aws-cdk/aws-rds/-/aws-rds-1.96.0.tgz"
   integrity sha512-8sJZTUPSGoDMDTFrTFSPFQQtqJSEIQExIABN8L3SEbTEMw+GUNOAQoQHRo4o1v7FS4qqJXZqvpCM4Ew8PmW37g==
