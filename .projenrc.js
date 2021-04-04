@@ -30,6 +30,7 @@ const project = new AwsCdkTypeScriptApp({
     '@aws-cdk/aws-secretsmanager',
     '@aws-cdk/assets',
     '@aws-cdk/aws-sqs',
+    'netmask',
   ],
   context: {
     env: 'prod',
