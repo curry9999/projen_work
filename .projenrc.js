@@ -11,6 +11,9 @@ const project = new AwsCdkTypeScriptApp({
     '@aws-cdk/aws-events',
     '@aws-cdk/aws-lambda',
     '@aws-cdk/aws-iam',
+    '@aws-cdk/aws-ec2',
+    '@aws-cdk/aws-efs',
+    '@aws-cdk/aws-rds',
   ],
   context: {
     env: 'prod',
