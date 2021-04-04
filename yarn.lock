@@ -22,9 +22,9 @@
     "@aws-cdk/cx-api" "1.96.0"
     constructs "^3.3.69"
 
-"@aws-cdk/aws-applicationautoscaling@1.96.0":
+"@aws-cdk/aws-applicationautoscaling@1.96.0", "@aws-cdk/aws-applicationautoscaling@^1.96.0":
   version "1.96.0"
-  resolved "https://registry.npmjs.org/@aws-cdk/aws-applicationautoscaling/-/aws-applicationautoscaling-1.96.0.tgz"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-applicationautoscaling/-/aws-applicationautoscaling-1.96.0.tgz#bd068cec7e6ea1a33bb46fc9ca440815a1587afb"
   integrity sha512-NxW709a4ioLHLK9/yi+mlBzjOMlXaXnXfpzwIu17AUcFQBitKyQ3vo/PAIZYFupI5BhidlgjFtD67CZlPZXZHg==
   dependencies:
     "@aws-cdk/aws-autoscaling-common" "1.96.0"
@@ -71,7 +71,7 @@
     "@aws-cdk/cx-api" "1.96.0"
     constructs "^3.3.69"
 
-"@aws-cdk/aws-cloudwatch@1.96.0":
+"@aws-cdk/aws-cloudwatch@1.96.0", "@aws-cdk/aws-cloudwatch@^1.96.0":
   version "1.96.0"
   resolved "https://registry.npmjs.org/@aws-cdk/aws-cloudwatch/-/aws-cloudwatch-1.96.0.tgz"
   integrity sha512-vlYf3Jay+srt1A6SOX5/fcFWQmXcouTzDWQovvg36DWPNknH2dF9nHpf7YrEesj7Nwxlo9aA0MrFBYqThlsy3w==
@@ -175,7 +175,7 @@
     "@aws-cdk/region-info" "1.96.0"
     constructs "^3.3.69"
 
-"@aws-cdk/aws-kms@1.96.0":
+"@aws-cdk/aws-kms@1.96.0", "@aws-cdk/aws-kms@^1.96.0":
   version "1.96.0"
   resolved "https://registry.npmjs.org/@aws-cdk/aws-kms/-/aws-kms-1.96.0.tgz"
   integrity sha512-yNtEsekR188JEFbS0AD5kDXUD2kQnzJd69GV+mNUcJtmwbJQVzs8m/wnZaVcx+Q8+qLEXPro2H0evCfyExJR5w==
@@ -209,7 +209,7 @@
     "@aws-cdk/cx-api" "1.96.0"
     constructs "^3.3.69"
 
-"@aws-cdk/aws-logs@1.96.0":
+"@aws-cdk/aws-logs@1.96.0", "@aws-cdk/aws-logs@^1.96.0":
   version "1.96.0"
   resolved "https://registry.npmjs.org/@aws-cdk/aws-logs/-/aws-logs-1.96.0.tgz"
   integrity sha512-LflFQ1Tz8VhiG4XHLqMmNw+AIM8chrnTjGoDulsOKASMcX254amLQYl137LLXpUI5eyr+P520o4XUh/AyRBy5Q==
@@ -237,7 +237,7 @@
     "@aws-cdk/core" "1.96.0"
     constructs "^3.3.69"
 
-"@aws-cdk/aws-s3-assets@1.96.0":
+"@aws-cdk/aws-s3-assets@1.96.0", "@aws-cdk/aws-s3-assets@^1.96.0":
   version "1.96.0"
   resolved "https://registry.npmjs.org/@aws-cdk/aws-s3-assets/-/aws-s3-assets-1.96.0.tgz"
   integrity sha512-NK9jD4+2BSSw3RKIWlzxDFZkinwtyWlMf1uxzbUKw8KuxpmuMhkx8OwWwKxM50BaNOKVAbBfXh8uhQTyCsQ4Zg==
@@ -250,7 +250,7 @@
     "@aws-cdk/cx-api" "1.96.0"
     constructs "^3.3.69"
 
-"@aws-cdk/aws-s3@1.96.0":
+"@aws-cdk/aws-s3@1.96.0", "@aws-cdk/aws-s3@^1.96.0":
   version "1.96.0"
   resolved "https://registry.npmjs.org/@aws-cdk/aws-s3/-/aws-s3-1.96.0.tgz"
   integrity sha512-dqsjXJRaUK3u3Ij9RvR0N+xmfvQkiUHTL3Wxgg9WUqgG2Q0fO2lEcsKLvkc4B1isWMlBg3Dy9vY3fFZUke4gBg==
@@ -284,7 +284,7 @@
     "@aws-cdk/cx-api" "1.96.0"
     constructs "^3.3.69"
 
-"@aws-cdk/aws-signer@1.96.0":
+"@aws-cdk/aws-signer@1.96.0", "@aws-cdk/aws-signer@^1.96.0":
   version "1.96.0"
   resolved "https://registry.npmjs.org/@aws-cdk/aws-signer/-/aws-signer-1.96.0.tgz"
   integrity sha512-UkdcpL4e/NJ6POdgKS/575uyvPHx8fV8XQSF34m3If5Xoq3GLoZhzskWg0ayzM5ogxaisiDb4JMta64sud+SOQ==
@@ -292,7 +292,7 @@
     "@aws-cdk/core" "1.96.0"
     constructs "^3.3.69"
 
-"@aws-cdk/aws-sns@1.96.0":
+"@aws-cdk/aws-sns@1.96.0", "@aws-cdk/aws-sns@^1.96.0":
   version "1.96.0"
   resolved "https://registry.npmjs.org/@aws-cdk/aws-sns/-/aws-sns-1.96.0.tgz"
   integrity sha512-r7IfRHkVnqmEgoU10QdJQwMy8fqfmtPoRfPqFHDUWSdsSR361UW2O36mOn4m69UJv2L08EjjPn2ZdltqwQAHIg==
