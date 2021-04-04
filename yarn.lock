@@ -13,9 +13,9 @@
     "@aws-cdk/cx-api" "1.96.0"
     constructs "^3.3.69"
 
-"@aws-cdk/assets@1.96.0":
+"@aws-cdk/assets@1.96.0", "@aws-cdk/assets@^1.96.0":
   version "1.96.0"
-  resolved "https://registry.npmjs.org/@aws-cdk/assets/-/assets-1.96.0.tgz"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/assets/-/assets-1.96.0.tgz#451b7619e30af4bb1f6df0c5dc01162998189adc"
   integrity sha512-gt+BNsFCUs/SCvwKhifZhEtsZNBFvzbUFrNaheCbNvbhs+k04/tBTEnOeoNLaCdD3yWXMnbxaxah1H76QADx9A==
   dependencies:
     "@aws-cdk/core" "1.96.0"
@@ -80,7 +80,7 @@
     "@aws-cdk/core" "1.96.0"
     constructs "^3.3.69"
 
-"@aws-cdk/aws-codeguruprofiler@1.96.0":
+"@aws-cdk/aws-codeguruprofiler@1.96.0", "@aws-cdk/aws-codeguruprofiler@^1.96.0":
   version "1.96.0"
   resolved "https://registry.npmjs.org/@aws-cdk/aws-codeguruprofiler/-/aws-codeguruprofiler-1.96.0.tgz"
   integrity sha512-P+7U76bKLB0MDKCer6w1JqfnzmN05Ezi4SfqXMjURj89DB8sHs0SxUvkfGd2oN4VgeWa3S9Ko4KUmihNS59ILA==
@@ -121,7 +121,7 @@
     "@aws-cdk/region-info" "1.96.0"
     constructs "^3.3.69"
 
-"@aws-cdk/aws-ecr-assets@1.96.0":
+"@aws-cdk/aws-ecr-assets@1.96.0", "@aws-cdk/aws-ecr-assets@^1.96.0":
   version "1.96.0"
   resolved "https://registry.npmjs.org/@aws-cdk/aws-ecr-assets/-/aws-ecr-assets-1.96.0.tgz"
   integrity sha512-3jbVxgeTaZ+D+rjqG71xxjWT6qggI7txhDanQjhmHEC4ND6Ac/dKwzhNwtsU/lKA825GTNinihY2RH5lF43RsA==
@@ -135,7 +135,7 @@
     constructs "^3.3.69"
     minimatch "^3.0.4"
 
-"@aws-cdk/aws-ecr@1.96.0":
+"@aws-cdk/aws-ecr@1.96.0", "@aws-cdk/aws-ecr@^1.96.0":
   version "1.96.0"
   resolved "https://registry.npmjs.org/@aws-cdk/aws-ecr/-/aws-ecr-1.96.0.tgz"
   integrity sha512-URY1abET2RxDTzm67jU/D7kM8xqV3wMu2W6lxwvIabO8x9K9EqTFZ5ZSaC3bO+4OKZ0L+1RGAHRoUY4mOUpe/g==
@@ -270,7 +270,7 @@
     "@aws-cdk/core" "1.96.0"
     constructs "^3.3.69"
 
-"@aws-cdk/aws-secretsmanager@1.96.0":
+"@aws-cdk/aws-secretsmanager@1.96.0", "@aws-cdk/aws-secretsmanager@^1.96.0":
   version "1.96.0"
   resolved "https://registry.npmjs.org/@aws-cdk/aws-secretsmanager/-/aws-secretsmanager-1.96.0.tgz"
   integrity sha512-CVk9UeBv92qwUjGiQ4IfkcINqS4jDg6p87i94GkrBt2xx+1NiGuIhGPkbgCbCiwLevZB2THJZDlUmVmQbip/cg==
@@ -305,7 +305,7 @@
     "@aws-cdk/core" "1.96.0"
     constructs "^3.3.69"
 
-"@aws-cdk/aws-sqs@1.96.0":
+"@aws-cdk/aws-sqs@1.96.0", "@aws-cdk/aws-sqs@^1.96.0":
   version "1.96.0"
   resolved "https://registry.npmjs.org/@aws-cdk/aws-sqs/-/aws-sqs-1.96.0.tgz"
   integrity sha512-d5IbcqqxP3ZVB25WEYVKhpXg0LVXphply+yyMIxoF7wWh6oGxXJUGOXLErYxJtz4vzlV+2wKwv2zBaIrzhXeFw==

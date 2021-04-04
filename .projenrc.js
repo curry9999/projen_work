@@ -23,6 +23,13 @@ const project = new AwsCdkTypeScriptApp({
     '@aws-cdk/aws-logs',
     '@aws-cdk/aws-cloudwatch',
     '@aws-cdk/aws-signer',
+    '@aws-cdk/aws-ecr',
+    '@aws-cdk/aws-ecr-assets',
+    '@aws-cdk/aws-codeguruprofiler',
+    '@aws-cdk/aws-sqs',
+    '@aws-cdk/aws-secretsmanager',
+    '@aws-cdk/assets',
+    '@aws-cdk/aws-sqs',
   ],
   context: {
     env: 'prod',

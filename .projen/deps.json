@@ -79,6 +79,11 @@
       "type": "runtime"
     },
     {
+      "name": "@aws-cdk/assets",
+      "version": "^1.96.0",
+      "type": "runtime"
+    },
+    {
       "name": "@aws-cdk/aws-applicationautoscaling",
       "version": "^1.96.0",
       "type": "runtime"
@@ -99,12 +104,27 @@
       "type": "runtime"
     },
     {
+      "name": "@aws-cdk/aws-codeguruprofiler",
+      "version": "^1.96.0",
+      "type": "runtime"
+    },
+    {
       "name": "@aws-cdk/aws-dynamodb",
       "version": "^1.96.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-ec2",
+      "version": "^1.96.0",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-cdk/aws-ecr-assets",
+      "version": "^1.96.0",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-cdk/aws-ecr",
       "version": "^1.96.0",
       "type": "runtime"
     },
@@ -154,12 +174,27 @@
       "type": "runtime"
     },
     {
+      "name": "@aws-cdk/aws-secretsmanager",
+      "version": "^1.96.0",
+      "type": "runtime"
+    },
+    {
       "name": "@aws-cdk/aws-signer",
       "version": "^1.96.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-sns",
+      "version": "^1.96.0",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-cdk/aws-sqs",
+      "version": "^1.96.0",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-cdk/aws-sqs",
       "version": "^1.96.0",
       "type": "runtime"
     },
