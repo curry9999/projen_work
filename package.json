@@ -63,8 +63,7 @@
     "@aws-cdk/aws-signer": "^1.110.1",
     "@aws-cdk/aws-sns": "^1.110.1",
     "@aws-cdk/aws-sqs": "^1.110.1",
-    "@aws-cdk/core": "^1.110.1",
-    "netmask": "^1.110.1"
+    "@aws-cdk/core": "^1.110.1"
   },
   "bundledDependencies": [],
   "license": "Apache-2.0",
